@@ -18,7 +18,7 @@ export const AppContext = props => {
 	const fetchSelecetedData = query => {
 		setLoading(true);
 		fetchDataFromApi(`search/?q=${query}`).then(res => {
-			// console.log(res);
+			console.log(res);
 			setLoading(false);
 		});
 	};
