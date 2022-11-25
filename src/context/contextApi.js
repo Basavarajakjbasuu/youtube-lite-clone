@@ -9,7 +9,7 @@ export const AppContext = props => {
 	const [loading, setLoading] = useState(false);
 	const [selectedCategory, setSelectedCategory] = useState('New');
 	const [mobileMenu, setMobileMenu] = useState(false);
-	const [searchResult, setSearchResult] = useState(false);
+	const [searchResults, setSearchResults] = useState([]);
 
 	useEffect(() => {
 		fetchSelecetedData(selectedCategory);
@@ -17,8 +17,9 @@ export const AppContext = props => {
 
 	const fetchSelecetedData = query => {
 		setLoading(true);
-		fetchDataFromApi(`search/?q=${query}`).then(res => {
-			console.log(res);
+		fetchDataFromApi(`search/?q=${query}`).then(({contents}) => {
+			setSearchResults(contents);
+			console.log('contest', contents);
 			setLoading(false);
 		});
 	};
@@ -28,7 +29,7 @@ export const AppContext = props => {
 			value={{
 				loading,
 				setLoading,
-				searchResult,
+				searchResults,
 				selectedCategory,
 				setSelectedCategory,
 				mobileMenu,
