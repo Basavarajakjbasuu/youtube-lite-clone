@@ -9,13 +9,12 @@ const VideoCard = ({ video }) => {
 	return (
 		<Link to={`/video/${video?.videoId}`}>
 			<div className="flex flex-col mb-8">
-				<div className="relative h-48 md:h-40	md:rounded overflow-hidden">
+				<div className="relative h-48 md:h-40 rounded-lg	md:rounded-xl overflow-hidden">
 					<img
 						src={video?.thumbnails?.[0]?.url}
 						alt="thumbnails"
 						className="h-full w-full object-cover"
 					/>
-					{/* <h1>video?.lengthSeconds</h1> */}
 					{video?.lengthSeconds && <VideoLength time={video?.lengthSeconds} />}
 				</div>
 				<div className="flex text-white mt-3">
