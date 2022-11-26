@@ -48,7 +48,7 @@ const VideoDetails = () => {
 							controls
 							width="100%"
 							height="100%"
-							style={{ backgroundColor: '#0000', borderRadius: '10px' }}
+							style={{ backgroundColor: '#0000' }}
 							className="rounded-md"
 						/>
 					</div>
@@ -80,16 +80,15 @@ const VideoDetails = () => {
 							</div>
 						</div>
 
-						<div className="flex text-white mt-4 md:mt-0">
-							<div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15]">
+						<div className="flex flex-row text-white mt-4 md:mt-0">
+							<div className="flex items-center justify-center h-11 px-4 md:px-6  rounded-3xl bg-white/[0.15]">
 								<AiOutlineLike className="text-xl text-white mr-2" />
 								<span>{`${abbreviateNumber(
 									video?.stats?.likes,
 									2
 								)} Likes`}</span>
 							</div>
-							<div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
-								<AiOutlineLike className="text-xl text-white mr-2" />
+							<div className="flex items-center justify-center h-11 px-4 md:px-6 rounded-3xl bg-white/[0.15] ml-4">
 								<span>{`${abbreviateNumber(
 									video?.stats?.views,
 									2
